@@ -1,0 +1,34 @@
+body{ margin:0 auto; }
+
+.header-title {
+    font-size: 20px;
+    margin: 20px 20px;
+    
+}
+
+.header-subtitle {
+    color: cadetblue;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+#result-table th {
+    color: white;
+    background-color: cadetblue;
+}
+
+#result-table tr:nth-child(even){
+    background-color: lightgrey;
+}
+
+#result-table tr:nth-child(odd){
+    background-color: white;
+}
