@@ -13,115 +13,161 @@
     <body>
         <header>
             <h1 class="header-title">Лабораторная работа №1 по Веб-программированию.</h1>
-            <p>
-                <span class="header-subtitle">Вариант :</span> 8888
+            <p class="header-content">
+                <span class="line-title">Вариант:</span> 2215
                 <br>
-                <span class="header-subtitle">Студент :</span> Монахов максим Денисович
+                <span class="line-title">Студент:&nbsp;</span> Монахов максим Денисович
                 <br>
-                <span class="header-subtitle">Группа  :</span>  P3211
+                <span class="line-title">Группа:&nbsp;&nbsp;&nbsp;</span> P3211
                 
             </p>
         </header>
         
-        <article>
-            <figure>
-                <img src="resources/figure.png" alt="The picture shows the figure genereated for my lab's variant.">
-                <figcaption>The picture shows the figure genereated for my lab's variant.</figcaption>
-            </figure>
-            
-            <form action="" method="post">
-                <p>Значение Х:<p>
-                
-                <label for="x-4">-4</label>
-                <input id="x-4" value="" name="x" type="checkbox">
-                
-                <label for="x-3">-3</label>
-                <input id="x-3" value="" name="x" type="checkbox">
-                
-                <label for="x-2">-2</label>
-                <input id="x-2" value="" name="x" type="checkbox">
-                
-                <label for="x-1">-1</label>
-                <input id="x-1" value="" name="x" type="checkbox">
-                
-                <label for="x0">0</label>
-                <input id="x0" value="" name="x" type="checkbox">
-                
-                <label for="x1">1</label>
-                <input id="x1" value="" name="x" type="checkbox">
-                
-                <label for="x2">2</label>
-                <input id="x2" value="" name="x" type="checkbox">
-                
-                <label for="x3">3</label>
-                <input id="x3" value="" name="x" type="checkbox">
-                
-                <label for="x4">4</label>
-                <input id="x4" value="" name="x" type="checkbox">
-                
-                
-                <p>Значение Y (из диапазона {-5..5})</p>
-                <input type="text" name="y" required>
-                
-                
-                <p>Значение R</p>
-                
-                <label for="r1">1</label>
-                <input id="r1" value="" name="r" type="checkbox">
-                
-                <label for="r2">2</label>
-                <input id="r2" value="" name="r" type="checkbox">
-                
-                <label for="r3">3</label>
-                <input id="r3" value="" name="r" type="checkbox">
-                
-                <label for="r4">4</label>
-                <input id="r4" value="" name="r" type="checkbox">
-                
-                <label for="r5">5</label>
-                <input id="r5" value="" name="r" type="checkbox">
-                
-                <br>
-                <input type="submit" value="Послать нах**">
+        <main>
+            <article>
+                <figure>
+                    <img src="resources/figure.png" alt="The picture shows the figure genereated for my lab's variant.">
+                    <figcaption>The figure shows a graph genereated for my lab's variant.</figcaption>
+                </figure>
 
-            </form>
-            
-        </article>
-            <table id="result-table">
-                <thead>
-                    <tr>
-                        <th scope="col">X</th>
-                        <th scope="col">Y</th>
-                        <th scope="col">R</th>
-                        <th scope="col">Точка попала в область</th>
-                        <th scope="col">Время проверки</th>
-                        <th scope="col">Время работы скрипта (в мс)</th>
-                    </tr>
-                </thead>
                 
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                    </tr>
-                </tbody>
-            </table>
-        
-        
-        <article>
+                
+                <form action="" method="post">
+                    
+                    <section class="content">
+                        
+                        <section class="choose-values">
+
+                            <span class="line-title">Значение Х:</span>
+
+                            <section class="checkbox-values">
+
+                                <input id="x-4" value="" name="x" type="checkbox">
+                                <label for="x-4">-4</label>
+
+
+                                <input id="x-3" value="" name="x" type="checkbox">
+                                <label for="x-3">-3</label>
+
+
+                                <input id="x-2" value="" name="x" type="checkbox">
+                                <label for="x-2">-2</label>
+
+
+                                <input id="x-1" value="" name="x" type="checkbox">
+                                <label for="x-1">-1</label>
+
+
+                                <input id="x0" value="" name="x" type="checkbox">
+                                <label for="x0">0</label>
+
+
+                                <input id="x1" value="" name="x" type="checkbox">
+                                <label for="x1">1</label>
+
+
+                                <input id="x2" value="" name="x" type="checkbox">
+                                <label for="x2">2</label>
+
+
+                                <input id="x3" value="" name="x" type="checkbox">
+                                <label for="x3">3</label>
+
+
+                                <input id="x4" value="" name="x" type="checkbox">
+                                <label for="x4">4</label>
+                            </section>
+
+                        </section>
+
+
+                        <section class="choose-values">
+                            <span class="line-title">Значение Y (из диапазона {-5..5}):</span>
+                            <input type="text" name="y" pattern="[0-9]+[\.,]{0,1}[0-9]*" required title="Введите целое число или десятичную дробь. В качестве дробного разделителя используйте запятую ',' или точку '.'">
+                        </section>
+
+
+                        <section class="choose-values">
+
+                            <span class="line-title">Значение R:</span>
+
+                            <section class="checkbox-values">
+                                
+                                <input id="r1" value="" name="r" type="checkbox">
+                                <label for="r1">1</label>
+                                
+                                <input id="r2" value="" name="r" type="checkbox">
+                                <label for="r2">2</label>
+                                
+                                <input id="r3" value="" name="r" type="checkbox">
+                                <label for="r3">3</label>
+
+                                <input id="r4" value="" name="r" type="checkbox">
+                                <label for="r4">4</label>
+                                
+                                <input id="r5" value="" name="r" type="checkbox">
+                                <label for="r5">5</label>
+                            </section>
+
+                        </section>
+                        
+                    </section>
+
+                        
+                    <br>
+                    <input type="submit" class="submit-button" value="ПРОВЕРИТЬ">
+                    
+                    
+                </form>
+
+            </article>
             
-        </article>
+            
+            
+            
+            <article>
+                
+                <table id="result-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">X</th>
+                            <th scope="col">Y</th>
+                            <th scope="col">R</th>
+                            <th scope="col">Точка попала в область</th>
+                            <th scope="col">Время проверки</th>
+                            <th scope="col">Время работы скрипта (в мс)</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </article>
+            
+            
+        </main>
+        
+        
+        <footer>
+            <p class="footer-text"> View on GitHub</p>
+            <a href="https://github.com/ITMO-Web-2nd-year/web_lab_1" target="_blank"> <img class="github-link-img" src="resources/GitHub-Mark-32px.png"> </a>
+        </footer>
     </body>
 </html>

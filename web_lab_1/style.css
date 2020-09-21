@@ -1,18 +1,90 @@
-body{ margin:0 auto; }
+body { 
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto 0;
+
+/*
+    background-image: url(resources/Pismak.jpg);
+    background-size: cover;
+    background-position: center;
+*/
+
+}
+
+header {
+    padding: 20px;
+    box-shadow: 4px 4px 10px cadetblue;
+    margin: 20px auto 50px;
+
+}
 
 .header-title {
     font-size: 20px;
     margin: 20px 20px;
-    
 }
 
-.header-subtitle {
-    color: cadetblue;
+
+.header-content {
+    text-align: left;
+    margin-left: 110px;
 }
+
+.line-title {
+    color: cadetblue;
+    font-weight: bold;
+}
+
+.content {
+    text-align: left;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.choose-values {
+    margin-bottom: 16px;
+}
+
+.choose-values p, .choose-values .checkbox-values {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.checkbox-values {
+    margin-left: 10px;
+}
+
+.checkbox-values label {
+    margin-right: 10px;
+}
+
+.submit-button {
+    margin-top: 20px;
+    height: 30px;
+    width: 13%;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: cadetblue;
+    border-color: cadetblue;
+    box-shadow: 4px 4px 10px cadetblue;
+}
+
+.submit-button:hover {
+    transform: scale(0.8);
+    color: cadetblue;
+    background-color: white;
+/*    box-shadow: none;*/
+}
+
 
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+table {
+    margin: 50px auto 40px;
 }
 
 th, td {
@@ -20,15 +92,43 @@ th, td {
     text-align: center;
 }
 
-#result-table th {
+table th {
     color: white;
     background-color: cadetblue;
 }
 
-#result-table tr:nth-child(even){
-    background-color: lightgrey;
+table tr:nth-child(even){
+    background-color: gainsboro;
 }
 
-#result-table tr:nth-child(odd){
+table tr:nth-child(odd){
     background-color: white;
 }
+
+footer {
+    margin-top: 80px;
+    height: 80px;
+    background-color: cadetblue ;
+    border-radius: 50px 50px 0 0;
+}
+
+.footer-text, .github-link-img {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-right: 10px;
+}
+
+.footer-text {
+    font-weight: bold;
+    font-family: "Monaco", monospace;
+    font-size: 20px;
+}
+
+.github-link-img:hover {
+  transform: scale(1.4);
+
+}
+
+
