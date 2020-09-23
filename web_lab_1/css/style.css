@@ -12,11 +12,15 @@ body {
 }
 
 header {
+
+    font-style: italic;
+
     padding: 20px;
     box-shadow: 4px 4px 10px cadetblue;
     margin: 20px auto 50px;
 
 }
+
 
 .header-title {
     font-size: 20px;
@@ -29,10 +33,12 @@ header {
     margin-left: 110px;
 }
 
+
 .line-title {
     color: cadetblue;
     font-weight: bold;
 }
+
 
 .content {
     text-align: left;
@@ -40,24 +46,49 @@ header {
     margin-top: 25px;
 }
 
+
 .choose-values {
     margin-bottom: 16px;
 }
 
-.choose-values p, .choose-values .checkbox-values {
-    vertical-align: middle;
-    display: inline-block;
-}
 
 .checkbox-values {
+    vertical-align: middle;
+    display: inline-block;
     margin-left: 10px;
+
 }
+
 
 .checkbox-values label {
     margin-right: 10px;
 }
 
-.submit-button {
+.message-box {
+    background-color: rgba(255, 77, 140, .6);
+    border: solid rgb(255, 77, 140);
+    border-radius: 5px;
+/*    height: 60px;*/
+    width: 500px;
+/*    display: block;*/
+    margin: 0 auto 0;
+/*    color: white;*/
+    text-align: left;
+/*    display: inline-block;*/
+    display: none;
+}
+
+.message-box-content {
+/*    vertical-align: middle;*/
+/*    display: inline-block;*/
+    word-wrap: break-word;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+
+#submit-button {
     margin-top: 20px;
     height: 30px;
     width: 13%;
@@ -70,11 +101,12 @@ header {
     box-shadow: 4px 4px 10px cadetblue;
 }
 
-.submit-button:hover {
-    transform: scale(0.8);
+
+#submit-button:hover {
+    transform: scale(0.9);
     color: cadetblue;
     background-color: white;
-/*    box-shadow: none;*/
+    box-shadow: none;
 }
 
 
@@ -83,27 +115,33 @@ table, th, td {
     border-collapse: collapse;
 }
 
+
 table {
     margin: 50px auto 40px;
 }
+
 
 th, td {
     padding: 10px;
     text-align: center;
 }
 
+
 table th {
     color: white;
     background-color: cadetblue;
 }
 
+
 table tr:nth-child(even){
     background-color: gainsboro;
 }
 
+
 table tr:nth-child(odd){
     background-color: white;
 }
+
 
 footer {
     margin-top: 80px;

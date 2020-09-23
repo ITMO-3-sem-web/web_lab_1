@@ -6,7 +6,7 @@
         <title>lab_1</title>
         <meta charset="utf-8">
         
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     
     
@@ -32,7 +32,7 @@
 
                 
                 
-                <form action="" method="post">
+                <form method="post">
                     
                     <section class="content">
                         
@@ -40,41 +40,41 @@
 
                             <span class="line-title">Значение Х:</span>
 
-                            <section class="checkbox-values">
+                            <section class="checkbox-values x">
 
-                                <input id="x-4" value="" name="x" type="checkbox">
+                                <input id="x-4" value="-4" name="x" type="checkbox">
                                 <label for="x-4">-4</label>
 
 
-                                <input id="x-3" value="" name="x" type="checkbox">
+                                <input id="x-3" value="-3" name="x" type="checkbox">
                                 <label for="x-3">-3</label>
 
 
-                                <input id="x-2" value="" name="x" type="checkbox">
+                                <input id="x-2" value="-2" name="x" type="checkbox">
                                 <label for="x-2">-2</label>
 
 
-                                <input id="x-1" value="" name="x" type="checkbox">
+                                <input id="x-1" value="-1" name="x" type="checkbox">
                                 <label for="x-1">-1</label>
 
 
-                                <input id="x0" value="" name="x" type="checkbox">
+                                <input id="x0" value="0" name="x" type="checkbox">
                                 <label for="x0">0</label>
 
 
-                                <input id="x1" value="" name="x" type="checkbox">
+                                <input id="x1" value="1" name="x" type="checkbox">
                                 <label for="x1">1</label>
 
 
-                                <input id="x2" value="" name="x" type="checkbox">
+                                <input id="x2" value="2" name="x" type="checkbox">
                                 <label for="x2">2</label>
 
 
-                                <input id="x3" value="" name="x" type="checkbox">
+                                <input id="x3" value="3" name="x" type="checkbox">
                                 <label for="x3">3</label>
 
 
-                                <input id="x4" value="" name="x" type="checkbox">
+                                <input id="x4" value="4" name="x" type="checkbox">
                                 <label for="x4">4</label>
                             </section>
 
@@ -83,7 +83,7 @@
 
                         <section class="choose-values">
                             <span class="line-title">Значение Y (из диапазона {-5..5}):</span>
-                            <input type="text" name="y" pattern="[0-9]+[\.,]{0,1}[0-9]*" required title="Введите целое число или десятичную дробь. В качестве дробного разделителя используйте запятую ',' или точку '.'">
+                            <input class="checkbox-values y" type="text" name="y" pattern="[0-9]+[\.,]{0,1}[0-9]*" required title="Введите целое число или десятичную дробь. В качестве дробного разделителя используйте запятую ',' или точку '.'">
                         </section>
 
 
@@ -91,7 +91,7 @@
 
                             <span class="line-title">Значение R:</span>
 
-                            <section class="checkbox-values">
+                            <section class="checkbox-values r">
                                 
                                 <input id="r1" value="" name="r" type="checkbox">
                                 <label for="r1">1</label>
@@ -112,10 +112,15 @@
                         </section>
                         
                     </section>
+                    
+                    
+                    <section class="message-box">
+                        <p class="message-box-content"></p>
+                    </section>
 
                         
                     <br>
-                    <input type="submit" class="submit-button" value="ПРОВЕРИТЬ">
+                    <input type="submit" id="submit-button" value="ПРОВЕРИТЬ">
                     
                     
                 </form>
@@ -169,5 +174,15 @@
             <p class="footer-text"> View on GitHub</p>
             <a href="https://github.com/ITMO-Web-2nd-year/web_lab_1" target="_blank"> <img class="github-link-img" src="resources/GitHub-Mark-32px.png"> </a>
         </footer>
+        
+<!--
+        <script>
+            $(document).ready
+        </script>
+-->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <script src="js/script.js"></script>
     </body>
 </html>
