@@ -1,17 +1,5 @@
 <?php
 
-//$a = $_GET[""];
-//session_start();
-//if ( ! isset($_SESSION["tableData"])) {
-//    $tableData = array();
-//    $_SESSION["tableData"] &= $tableData;
-//}
-//
-//$tableData = 12;
-//
-//echo $tableData;
-
-print_r($_GET . "\n" . isValidRequest());
 
 $x = "";
 $y = "";
@@ -19,7 +7,6 @@ $r = "";
 $response = "";
 
 
-// Run the server request handler function
 initialize();
 main();
 
@@ -31,8 +18,6 @@ function initialize() {
 
 function main() {
 
-    $errorMessage = "Error: form request is damaged.";
-
     if ( isValidRequest() ) {
 
         initializeValues();
@@ -40,17 +25,18 @@ function main() {
         if ( isValidX() && isValidY() && isValidR() ) {
             sendResponse(prepareResponse(), "OK",);
         } else {
-            sendResponse($errorMessage, "ERROR");
+            sendResponse("Request is not valid. Some of the arguments are incorrect.", "ERROR");
         }
 
     } else {
-        sendResponse($errorMessage, "ERROR");
+        sendResponse("Request is not valid. Not all of the necessary arguments are present.", "ERROR");
     }
 }
 
 
 function isValidRequest() {
-    return ( isset($_GET["x"]) && $_GET["y"] && $_GET["r"] );
+
+    return ( isset($_GET["x"]) && isset($_GET["y"]) && isset($_GET["r"]) );
 }
 
 
@@ -63,6 +49,7 @@ function initializeValues() {
     $r = $_GET["r"];
 }
 
+
 function isValidX() {
 
     global $x;
@@ -73,11 +60,8 @@ function isValidX() {
 
     $x = intval($x);
 
-    if ( ($x > -4) && ($x < 4)) {
-        return true;
-    } else {
-        return false;
-    }
+    return ( ($x >= -4) && ($x <= 4) );
+
 }
 
 
@@ -85,50 +69,37 @@ function isValidY() {
 
     global $y;
 
-//    str_replace(",", ".",$y);
+    str_replace(",", ".", $y);
 
     if ( ! is_numeric($y) ) {
         return false;
     }
 
+    $tmpArr = explode(".", $y);
 
-    $tmpArray = explode(".", $y);
+    $intPart = $tmpArr[0];
+    $fracPart = 0;
 
-    if (count($tmpArray) == 2) {
-        $integerPart = $tmpArray[0];
-        $fractionalPart = $tmpArray[1];
-    } elseif (count($tmpArray) == 1) {
-        $integerPart = $tmpArray[0];
-        $fractionalPart = "0";
-    } else {
-        return false;
+    if ( count($tmpArr) == 2) {
+        $fracPart = $tmpArr[1];
     }
-
-//    if ( ! ( is_numeric($integerPart) || is_numeric($fractionalPart) ) ) {
-//        return false;
-//    }
-
-    $integerPart = intval($integerPart);
-    $fractionalPart = intVal($fractionalPart);
 
     $y = floatval($y);
 
-    return isCorrectY($integerPart, $fractionalPart);
+    return isCorrectValueY($intPart, $fracPart);
 
 }
 
 
-function isCorrectY($intPart, $fracPart) {
+function isCorrectValueY($intPart, $fracPart) {
 
     $leftLimit = -5;
     $rightLimit = 5;
 
-    if ( ( ($intPart == $leftLimit) || ($intPart == $rightLimit) ) && $fracPart == 0) {
-        return true;
-    } else if ( ($intPart > $leftLimit) && ($intPart < $rightLimit) ) {
+    if ( ( ($intPart == $leftLimit) || ($intPart == $rightLimit) ) && ($fracPart == 0) ) {
         return true;
     } else {
-        return false;
+        return ( ($intPart > $leftLimit) && ($intPart < $rightLimit) );
     }
 }
 
@@ -141,13 +112,11 @@ function isValidR() {
         return false;
     }
 
+
     $r = intval($r);
 
-    if ( ($r > 1) && ($r < 5)) {
-        return true;
-    } else {
-        return false;
-    }
+    return ( ($r >= 1) && ($r <= 5) );
+
 }
 
 
@@ -168,7 +137,7 @@ function prepareResponse() {
 
 
     $currentTime = date("H : i : s");
-    $runTime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
+    $runTime = round( (microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"] ) * 1000 , 3);
 
 
     $response =
@@ -177,7 +146,7 @@ function prepareResponse() {
             "<td>" . $y . "</td>>" .
             "<td>" . $r . "</td>>" .
             "<td class='" . $resultRepresentationClass . "'>" . $resultRepresentation . "</td>>" .
-            "<td>" . $currentTime . "</td>>" .
+        "<td>" . $currentTime . "</td>>" .
             "<td>" . $runTime . "</td>>";
 
     return $response;
@@ -190,16 +159,15 @@ function pointIsInArea() {
     global $x, $y, $r;
 
     return
-        (  ( ($x > -$r) && ($x < 0) && ($y < (0.5 * $x - $r)) )
-        || ( ($x > 0) && ($x < $r/2) && ($y > 0) && ($y < $r) )
-        || ( ($x > 0) && ($x < $r/2) && ($y**2 < ($r**2 - $x**2)) && ($y < 0) ) );
+        (  ( ($x >= (-1) * $r) && ($x <= 0) && ($y <= (0.5 * $x + 0.5 * $r)) )
+        || ( ($x >= 0) && ($x <= $r/2) && ($y >= 0) && ($y <= $r) )
+        || ( ($x >= 0) && ($x <= $r/2) && ($y**2 <= ($r**2 - $x**2)) && ($y <= 0) ) );
 }
 
 
 function sendResponse($responseContent, $responseStatus) {
 
-//    if ($responseStatus != "")
-    echo array("content" => $responseContent, "status" => $responseStatus);
+    echo json_encode(array("content" => $responseContent, "status" => $responseStatus));
 }
 
 
