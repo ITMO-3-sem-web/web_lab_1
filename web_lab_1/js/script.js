@@ -26,11 +26,13 @@ $(document).ready(function(){
         if ( isValidData() ){
 
             makeMessagePositive();
-            showMessage("Форма успешно отправлена.");
+            showMessage("Форма успешно отправлена." +
+                "<br>Вы хорошо поработали." +
+                "<br>Похвалите себя: сходите в бар с друзьями, покатайтесь на велосипеде и тп...");
             console.log("Correct values");
             
-            $.get("php/php.php", function(data) {
-                alert("Gort data : " + data);
+            $.get("./php/php.php", $("form").serialize(), function(data) {
+                console.log("Gort data : " + data);
             })
         }
     };
@@ -71,6 +73,7 @@ $(document).ready(function(){
             return false;
             
         } else {
+            console.log("Y = " + y);
             return true;
         }
     };
@@ -78,7 +81,7 @@ $(document).ready(function(){
     
     // Checks whether the specified 'y' numeric value is in the range {-5...5}.
     function isCorrectValueY(y) {
-        return (y > -5) && (y < 5);
+        return (y >= -5) && (y <= 5);
     }
 
     

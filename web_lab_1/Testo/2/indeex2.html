@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Пример использования jQuery функции $.get()</title>
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+	$( document ).ready(function(){
+	  $( "form" ).submit(function(){
+	    event.preventDefault(); // отменяем действие события по умолчанию
+	    var formData = $( this ).serialize(); // создаем переменную, которая содержит закодированный набор элементов формы в виде строки
+
+          console.log("Sending $_GET");
+	    $.get( "user2.php", formData, function( data ) { //  передаем и загружаем данные с сервера с помощью HTTP запроса методом GET
+            console.log("Received data : " + data);
+	      $( "div" ).html( data ); // вставляем в элемент <div> данные, полученные от сервера
+	    })
+	  });
+	});
+		</script>
+	</head>
+	<body>
+		<form> <!-- метод GET по умолчанию -->
+			<input type = "text" placeholder = "Имя" name = "firstName" required> <!-- поле обязательно к заполнению -->
+			<input type = "text" placeholder = "Фамилия" name = "lastName" required> <!-- поле обязательно к заполнению -->
+			<input type = "submit" value = "Добавить">
+		</form>
+		<div></div>
+	</body>
+</html>
