@@ -40,9 +40,7 @@ $(document).ready(function(){
 
             $.get("./php/php.php", request, function(data) {
 
-
                 data = JSON.parse(data);
-
 
                 let $responseStatus = data["status"];
                 let $responseContent = data["content"];

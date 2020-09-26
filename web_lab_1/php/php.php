@@ -23,7 +23,7 @@ function main() {
         initializeValues();
 
         if ( isValidX() && isValidY() && isValidR() ) {
-            sendResponse(prepareResponse(), "OK",);
+            sendResponse(prepareResponse(), "OK");
         } else {
             sendResponse("Request is not valid. Some of the arguments are incorrect.", "ERROR");
         }
@@ -167,7 +167,11 @@ function pointIsInArea() {
 
 function sendResponse($responseContent, $responseStatus) {
 
-    echo json_encode(array("content" => $responseContent, "status" => $responseStatus));
+    // Good way to send data
+//    echo json_encode(array("content" => $responseContent, "status" => $responseStatus));
+
+    // This stupid json transformation is used because jason_encode() is NOT installed on HELIOS
+    echo '{"content":' . '"' . $responseContent . '"' . ',' . '"status":' . '"' . $responseStatus . '"' . '}';
 }
 
 
