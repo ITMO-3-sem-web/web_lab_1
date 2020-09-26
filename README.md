@@ -35,11 +35,11 @@
 
 ## Изначально интерфейс выглядел так:
 
-![README%20md%202750f0c6118041cc872098571c271a4d/Laba-Pismak-General.png](README%20md%202750f0c6118041cc872098571c271a4d/Laba-Pismak-General.png)
+![Laba-Pismak-General](D:\Workspace\ITMO\ITMO-Web\web_lab_1\web_lab_1\resources\Laba-Pismak-General.png)
 
 ---
 
-![README%20md%202750f0c6118041cc872098571c271a4d/Laba-Pismak-RESPECT.png](README%20md%202750f0c6118041cc872098571c271a4d/Laba-Pismak-RESPECT.png)
+![Laba-Pismak-RESPECT](D:\Workspace\ITMO\ITMO-Web\web_lab_1\web_lab_1\resources\Laba-Pismak-RESPECT.png)
 
 ## Вывод
 
