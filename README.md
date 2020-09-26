@@ -31,15 +31,13 @@
 - Отступы элементов ввода должны задаваться в пикселях.
 - Страница должна содержать сценарий на языке JavaScript, осуществляющий валидацию значений, вводимых пользователем в поля формы. Любые некорректные значения (например, буквы в координатах точки или отрицательный радиус) должны блокироваться.
 
-![README%20md%202750f0c6118041cc872098571c271a4d/Untitled.png](README%20md%202750f0c6118041cc872098571c271a4d/Untitled.png)
-
 ## Изначально интерфейс выглядел так:
 
-![Laba-Pismak-General](D:\Workspace\ITMO\ITMO-Web\web_lab_1\web_lab_1\resources\Laba-Pismak-General.png)
+![Laba-Pismak-General](.\web_lab_1\resources\Laba-Pismak-General.png)
 
 ---
 
-![Laba-Pismak-RESPECT](D:\Workspace\ITMO\ITMO-Web\web_lab_1\web_lab_1\resources\Laba-Pismak-RESPECT.png)
+![Laba-Pismak-RESPECT](.\web_lab_1\resources\Laba-Pismak-RESPECT.png)
 
 ## Вывод
 
