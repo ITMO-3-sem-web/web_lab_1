@@ -33,7 +33,7 @@
 
 ## Изначально интерфейс выглядел так:
 
-![Laba-Pismak-General](.\web_lab_1\resources\Laba-Pismak-General.png)
+![Laba-Pismak-General](./web_lab_1/resources/Laba-Pismak-General.png)
 
 ---
 
