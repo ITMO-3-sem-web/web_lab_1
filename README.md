@@ -37,7 +37,7 @@
 
 ---
 
-![Laba-Pismak-RESPECT](.\web_lab_1\resources\Laba-Pismak-RESPECT.png)
+![Laba-Pismak-RESPECT](./web_lab_1/resources/Laba-Pismak-RESPECT.png)
 
 ## Вывод
 
