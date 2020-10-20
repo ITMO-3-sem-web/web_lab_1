@@ -6,6 +6,19 @@ $(document).ready(function(){
     let x, y, r;
     let messageContentIsPositive, messageBoxIsShown;
 
+    initialize();
+
+
+
+    //
+    function initialize() {
+        if (localStorage.getItem("table-content") === null) {
+            localStorage.setItem("table-content", "")
+        };
+
+        $("#result-table tr:first").after(localStorage.getItem("table-content"));
+    }
+
 
     // Handle submit-button clicked action to check the form inputs' values   .
     $("#submit-button").click(function() {
@@ -47,6 +60,7 @@ $(document).ready(function(){
 
 
                 if ($responseStatus === "OK") {
+                    localStorage.setItem("table-content", $responseContent + localStorage.getItem("table-content"));
                     $("#result-table tr:first").after($responseContent);
                 } else if ($responseStatus === "ERROR") {
                     makeMessageNegative();
